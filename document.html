@@ -1,0 +1,89 @@
+<!-- <body>
+    <h3>HTML 문서 작성기</h3>
+    <HR>
+        <p>아래에 HTML 태그를 포함한 내용으로 문서를 만들어보세요.<br>
+        이후 버튼을 클릭하면 새창으로 문서가 출력</p>
+        <textarea id=txtarea rows=5 cols=20>내용을 입력하세요.</textarea>
+        <p><button onclick="createHTML()">HTML 문서 생성</button></p>
+        <script>
+            var win = null;
+            function createHTML(){
+                if(win==null || win.closed){
+                    win = window.open("",'newWin','width=350,height=350');
+
+                    var txtarea = document.getElementById('txtarea');
+                    win.document.open();
+                    win.document.write(txtarea.value);
+                    win.document.close();
+                }
+            }
+    </script>
+</body> -->
+<!-- <body>
+    <h3>입력하신 내용은</h3>
+    <span id=data>이 곳</span>
+    <h3>으로 출력됩니다.</h3>
+    <textarea id=txtarea>하고싶은 말을 적어주세요.</textarea>
+    <button onclick="setMessage();">저장</button>
+    <script>
+        function setMessage(){
+            var spans = document.getElementById('data');
+            var text = document.getElementById('txtarea');
+            var textNode = document.createTextNode(text.value);
+            spans.removeChild(spans.childNodes[0]);
+            spans.appendChild(textNode);
+            text.value='';
+        }
+    </script>
+</body> -->
+
+<body>
+    <h3>그림 옮기기</h3>
+    <table border=1>
+        <tr height=10><td><img src="img/A.jpg"></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr> 
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+    </table>
+    <button onclick="up();">위로 이동</button>
+    <button onclick="down();">아래로 이동</button>
+<script>
+    for (let i = 0; i < document.body.childNodes.length; i++) {
+      document.write(document.body.childNodes[i]);
+    }
+    document.write(document.body.childNodes[3].childNodes[1]);
+    document.write("<br>");
+
+    var img = document.getElementsByTagName('img')[0];
+    var tab = document.body.childNodes[3].childNodes[1];
+    var posi = 0;
+    document.write(tab.childNodes[posi+2].childNodes[0]);
+    function up(){
+        if(posi>=2){
+            var now = tab.childNodes[posi].childNodes[0];
+    
+            var next = tab.childNodes[posi-2].childNodes[0];
+            now.removeChild(now.childNodes[0]);
+            next.appendChild(img);
+            posi -= 2;
+        }
+    }
+        function down(){
+            if(posi<18){
+                var now = tab.childNodes[posi].childNodes[0];
+                var next = tab.childNodes[posi+2].childNodes[0];
+                now.removeChild(now.childNodes[0]);
+                next.appendChild(img);
+                posi += 2;
+                console.log(posi);
+            }
+        }
+    
+</script>
+</body>

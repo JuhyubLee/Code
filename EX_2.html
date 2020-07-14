@@ -1,0 +1,142 @@
+
+    <!-- <script>
+        var info = navigator.userAgent.toLocaleLowerCase();
+        var message = null;
+        if(info.indexOf('windows')>=0){
+            message = "connect windows";
+        }else if(info.indexOf('macintosh')>=0){
+            message = "connect macOS";
+        }else if(info.indexOf('iphone')>=0){
+            message = "connect IPhone";
+        }else if(info.indexOf('android')>=0){
+            message = "connect Android";
+        }
+        document.write(message, "<br>");
+        var scr_width = screen.width;
+        var scr_height = screen.height;
+        document.write('기기 모니터 넓이 : '+scr_width+"hx","<br>");
+        document.write('기기 모니터 높이 : '+scr_height+"px","<br>");
+        document.write('서버 도메인 이름 : '+location.hostname,"<br>");
+        document.write('서버 포트 번호 : '+location.port,"<br>");
+        document.write('URL 경로 : '+location.pathname);
+        
+    </script> -->
+    <!-- <script>
+        var docu = document.createDocumentFragment();
+        for(var i=1; i<=4; i++){
+        var elNode = document.createElement('h3');
+        var textNode = document.createTextNode('create textNode'+i);
+        elNode.appendChild(textNode);
+        docu.appendChild(elNode);
+        }
+        document.body.appendChild(docu);
+    </script> -->
+    <!-- <h3>내가 좋아하는 음식</h3>
+    <span>떡볶이</span>, 깍뚜기,<span>치킨, 햄버거</span>,회, 막창,<span>김치볶음밥, 제육볶음</span>, 커피
+    <button onclick="change()">좋아하는 음식은?</button>
+    <script>
+        var spans = document.getElementsByTagName('span');
+        function change(){
+            for(var i=0; i<spans.length; i++){
+                var span = spans[i];
+                span.style.color = "red";
+                span.style.fontSize = "18px";
+            }
+        }
+
+    </script> -->
+    <!-- <h3>HTML 문서~</h3>
+    <HR>
+        <P>아래에 HTML 태그를 포함한 내용을 적어보자~</P>
+        <textarea id=txtarea rows=5 cols=20>내용 입력!</textarea>
+        <p><button onclick="createHTML()">HTML 문서 생성</button></p>
+        <script>
+            var win = null;
+            function createHTML(){
+                if(win==null || win.closed){
+                    win = window.open("",'newWin','width=350, height=350');
+
+                    var txtarea = document.getElementById('txtarea');
+                    win.document.open();
+                    win.document.write(txtarea.value);
+                    win.document.close();
+                }
+            }
+        </script> -->
+        <!-- <body>
+        <h3>입력하신 내용은</h3>
+        <span id=text>이 곳!</span>
+        <h3>으로 출력됩니다.</h3>
+        <textarea id=textarea>내용 입력!</textarea>
+        <button onclick="change()">저장</button>
+        <script>
+            function change(){
+                var text = document.getElementById('text');
+                var txtarea = document.getElementById('textarea');
+                var textNode = document.createTextNode(text.value);
+                text.removeChild(text.childNodes[0]);
+                text.appendChild(textNode);
+                text.value = '';
+            }
+        </script> -->
+
+        <body>
+        <h3>그림 옮기기</h3>
+        <table border=1>
+        <tr height=10><td><img src="img/A.jpg"></td> </tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        <tr height=10><td></td></tr>
+        </table>
+        <button onclick="up()">위로 이동</button>
+        <button onclick="down()">아래로 이동</button>
+        <script>
+                for (let i = 0; i < document.body.childNodes.length; i++) {
+                    console.log(document.body.childNodes[i]);
+                    console.log(document.body.childNodes[i].nodeName);
+                    console.log(document.body.childNodes[i].nodeValue);
+    }
+            var img = document.getElementsByTagName('img')[0];
+            var tab = document.body.childNodes[3].childNodes[1];
+            var posi = 0;
+            var message = "hi";
+            var win = null;
+            function up(){
+                if(posi >= 2){
+                    var now = tab.childNodes[posi].childNodes[0];
+                    var next = tab.childNodes[posi-2].childNodes[0];
+                    now.removeChild(now.childNodes[0]);
+                    next.appendChild(img);
+                    posi -= 2;
+                }
+                if(posi === 0){
+                    var newWin = window.open("",'newWin','width=350, height=350');
+                    newWin.document.open();
+                    newWin.document.write("위로 더이상 이동 불가");
+                    newWin.document.close();
+                }
+            }
+            function down(){
+                if(posi < 18){
+                    var now = tab.childNodes[posi].childNodes[0];
+                    var next = tab.childNodes[posi+2].childNodes[0];
+ 
+                    next.appendChild(img);
+                    posi += 2;
+                }
+                if(posi === 18){
+                    var newWin = window.open("",'newWin','width=350, height=350');
+                    newWin.document.open();
+                    newWin.document.write("아래로 더이상 이동 불가");
+                    newWin.document.close();
+                }
+            }
+        </script>
+        
+</body>

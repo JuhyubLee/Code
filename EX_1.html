@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+        <!-- 재 선언 가능
+        var a = 10;
+
+         재 선언 불가, 재 할당은 가능
+        let a = '10';
+         ex) a = '20'; <= 가능
+
+         재 선언, 재할당 불가
+        const a = true;
+
+         'let' 와 'const'를 쓰는게 좋음 -->
+<body>
+    <p id=area>
+    <script>
+        // //문자
+        // document.write("첫 예제","<br>");
+
+        // var a = 'a'; // "a"
+        // var a = new String('a');
+        // document.write(a,"<br>");
+        
+        // var b = "<h1>자바스크립트</h1>";
+        // document.write(b);
+
+        // // 숫자
+        // var a = 100;
+        // var d = Number("100");
+
+        // if(d=="100"){
+        //     document.write(d+"는 100");
+        //     document.write("<br>");
+        // }
+        // if(d==100){
+        //     document.write(d+"는 100");
+        // }
+
+        // 논리형
+        // var a; // <= undefind
+        // a = null; // <= NULL
+        // var e = prompt("hello~");
+        // if(e){
+        //     document.write(e);
+        // }else{
+        //     document.write("bye bye~");
+        // }
+        //  var a = 100;
+        //  var b = "100";
+        //  var c;
+        //  document.write(typeof a, "<br>");
+        //  document.write(typeof b, "<br>");
+        //  document.write(c);
+        // var a = 10;
+        // var b = "10";
+        // if(a===b){
+            
+        // }
+        // if(a!==b){
+        //     // 값이나 타입 둘 중 하나만 달라도 됨
+        // }
+            // for(var i=0; i<=10; i++){
+            //     if(i%5==0){
+            //         document.write("<font color='red'>"+i+"</font><br>");
+            //     }else if(i%3==0){
+            //         document.write("<font color='green'>"+i+"</font><br>");
+            //     }else if(i%2==0){
+            //         document.write("<font color='blue'>"+i+"</font><br>");
+            //     }else{
+            //         document.write("<font color='black'>"+i+"</font><br>");
+            //     }
+            // }
+            // var a = prompt("네이버, 다음, 구글, 네이트, 스포조이 중 이동하고 싶은 사이트를 입력하세요.");
+            //     var url;
+            //     if(a === "네이버" || a === "naver"){
+            //         url = "www.naver.com";
+            //     } else if(a === "다음" || a === "daum"){
+            //         url = "www.daum.net";
+            //     } else if(a === "구글" || a === "google"){
+            //         url = "wwww.google.co.kr";
+            //     } else{
+            //         alert("보기에 없는 사이트 입니다.");
+            //         window.close();
+            //     }
+            //     if(url) location.href = "http://"+url;
+            // var arr1 = ['korea','japan','china'];
+            // var arr2 = ['korean','japaness','chiness'];
+            // document.write(arr1.join('-')+"<br>");
+            // document.write(arr1.concat(arr2)+"<br>");
+            // document.write(arr2.sort()+"<br>");
+            // document.write(arr1.reverse());
+            var i = 0;
+            var variable = setInterval(function(){
+                
+                i++;
+                document.getElementById('area').innerText=i;
+            }, 1000);
+    </script>
+    </p>
+    <button onclick="clearInterval(variable)">정지</button>
+</body>
+
+</html>

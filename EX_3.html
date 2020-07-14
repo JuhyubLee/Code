@@ -1,0 +1,158 @@
+<body>
+    <!-- <script>
+        var add = function add(x,y){
+            return x+y;
+        };
+        document.write(add(2,3+4));
+    </script> -->
+
+    <!-- <script>
+        var add = function add(){
+            var sum = 0;
+            for(var i=0;i<arguments.length; i++){
+                sum += arguments[i];
+            }
+            return sum;
+        };
+        document.write(add(2,3),"<br>");
+        document.write(add(),"<br>");
+        document.write(add(2*5,7,2),"<br>");
+    </script> -->
+
+    <!-- <script>
+        var addForFirst = function(first,...restArguments){
+            var sum = 0;
+            sum += first;
+            for(var i=0; i<restArguments.length; i++){
+                sum *= restArguments[i];
+            }
+            return sum;
+        };
+        document.write(addForFirst(3, 2,2,2));
+    </script> -->
+    <!-- <script>
+        var a = prompt("text");
+        var sum = 0;
+        for(var i=0; i<4; i++){
+            text[i] = "언어 점수를 입력하세요.";
+            i++;
+            text[i] = "수학 점수를 입력하세요.";
+            i++;
+            text[i] = "영어 점수를 입력하세요.";
+            i++;
+            text[i] = "사탐 점수를 입력하세요.";
+            i++;
+            sum += text[i]; 
+        }
+        return sum;
+        document.write(a);
+    </script> -->
+    <!-- <p>첫 번째 요소</p>
+    <h2>두 번째 요소</h2>
+    <span>세 번째 요소</span>
+    <script>
+        var print = function docu(name){
+            console.log('현재 DOM : '+name.tagName+"<br>");
+            if(name.children.length > 0){
+                for(var i=0; i<name.children.length; i++){
+                    docu(name.children[i]);
+                }
+            }
+        };
+        print(document.body);
+    </script> -->
+    <!-- <script>
+        (function(){
+        var a = 100;
+        function menu(){
+            a += 100;
+            console.log(a);
+        }
+        menu();
+        })();
+        function menu(){
+            console.log(a);
+        }
+    </script> -->
+    <!-- <script>
+        var arr = [];
+        for(var i=0; i<5; i++){
+            arr[i] = function(i){
+                return function(){
+                return i;
+                }
+            }(i);
+        }
+        for(var j=0; j<arr.length; j++){
+            console.log(arr[j]());
+        }
+    </script> -->
+    <!-- 모든 글자는 버튼을 누르면 바뀜<br>
+    <span>body 태그 안에 있다면~</span><br>
+    <button id='size-20'>20px</button>
+    <button id='size-24'>24px</button>
+    <button id='size-28'>28px</button>
+    <script>
+        function changeSize(size){
+            return function(){
+                document.body.style.fontSize = size + 'px';
+            };
+        }
+        
+        var size20 = changeSize(20);
+        var size24 = changeSize(24);
+        var size28 = changeSize(28);
+        document.getElementById('size-20').onclick = size20;
+        document.getElementById('size-24').onclick = size24;
+        document.getElementById('size-28').onclick = size28;
+    </script> -->
+    <!-- <script>
+        function Person(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        var person1 = new Person("이주협",26);
+        person1.job = "학생";
+        Person.prototype.getInfo = function(){
+            return '이름: '+this.name+', 나이: '+this.age+', 직업: '+this.job;
+        }
+        document.write(person1.getInfo(),"<br>");
+        var person2 = new Person("엄영범",20);
+        document.write(person2.getInfo());
+    </script> -->
+    <!-- <script>
+        function Person(name){
+            this.name = name;
+            this.hello = function(){
+                console.log('안녕하세요, '+name+'입니다~');
+            };
+        }
+        var person1 = new Person('이주협');
+        var person2 = new Person('엄영범');
+        person1.hello();
+        person2.hello();
+        console.log(person1.hello===person2.hello);
+    </script> -->
+    <!-- <script>
+        function Person(name){
+            this.name = name;
+        }
+        Person.prototype.hello = function(){
+            console.log('안녕하세요, '+this.name+'입니다~');
+        }
+        var person1 = new Person('이주협');
+        var person2 = new Person('엄영범');
+        person1.hello();
+        person2.hello();
+        console.log(person1.hello===person2.hello);
+    </script> -->
+
+    <!-- <script >
+        function Person(){this.a = 1;}
+        Person.prototype.b = 2;
+        Object.prototype.c = 3;
+        var per = new Person();
+        console.log(per);
+    </script> -->
+    
+</body>

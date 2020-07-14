@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p>
+        <img src="https://img.fifa.com/image/upload/t_tc1/syshdiqtrae0giefi6.jpg"
+        class="img1">
+    </p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(document).ready(function(){
+                var h1 = $(".img1").height();
+                console.log("ready :", h1);
+            });
+            $(window).on.load(function(){
+                var h2 = $(".img1").height();
+                console.log("load :", h2);
+            });
+        });
+    </script> -->
+    <!-- <p>
+        <button class="btn1">버튼1</button>
+    </p>
+    <p>내용1</p>
+    <p>
+        <button class="btn2">버튼2</button>
+    </p>
+    <p>내용2</p>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".btn1").click(function(){
+                $(".btn1").parent().next().css({"color" : "#f00"});
+                $(".btn2").trigger("mouseover");
+            });
+            $(".btn2").on({
+                "mouseover focus" : function(){
+                    $(".btn2").parent().next().css({"color" : "#0f0"});
+                },
+                "mouseout blur" : function(){
+                    $(".btn2").parent().next().css({"color" : "#000"});
+                },
+            });
+        })
+    </script> -->
+     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".btn1").hover(function(){
+                $(".btn1").parent().next().css({"color" : "#f00"})
+            }, function(){
+                $(".btn1").parent().next().css({"color" : "black"})
+            });
+        })
+    </script> -->
+    <h2>데이터 입력</h2>
+    이름 : <input type="text" id="addname" value="이름을 입력하세요."></input><br>
+    선호종목 : <select id="pick">
+        <option value="img/A.jpg">종이의 집</option>
+        <option value="img/B.jpg">슈츠</option>
+        <option value="pick3">워킹데드</option>
+        <option value="pick3">슈퍼내츄럴</option>
+    </select><br><br>
+    <img id='image1' src='' width=500></img><br>
+    <p id="xy">x,y 좌표값</p>
+    <p id="change_color">색깔 바뀐다</p>
+    <button class="btn1">강제 이벤트 발생</button>
+    <p id="click">누른 횟수 : 0</p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#addname").click(function(){
+                $("#addname").val('');
+            });
+            $("#pick").click(function(){
+            var imgValue = $('option:selected', this).val();
+            $("#image1").attr("src", imgValue);
+            });
+            $("#xy").on({
+                "mousemove" : function(){
+                var x = event.clientX;
+                var y = event.clientY;
+                var coor = "X 좌표: "+ x + ", Y 좌표: "+ y;
+                document.getElementById("xy").innerHTML = coor;
+            },
+                "mouseout" : function(){
+                document.getElementById("xy").innerHTML = "x,y 좌표값";
+            },
+            });
+            $("#change_color").mouseover(function colorChange(){
+                var arr1 =["red","yellow","green","blue","pink"];
+                for(var i=0; i<arr1.length; i++){
+                    $("#change_color").css("color", arr1[i]);
+                };
+                setTimeout(colorChange(), 1000);
+            });
+        });
+        
+    </script>
+</body>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type=hidden name=hid><br>
+    <input type=text name=text1><br>
+    <a href="http://www.naver.com">네이버(비보안)</a><br>
+    <a href="https://www.naver.com">네이버(보안)</a><br>
+    <a href="http://www.daum.net">다음(비보안)</a><br>
+    <a href="https://www.daum.net">다음(보안)</a><br>
+    <a href="http://www.google.com">구글(비보안)</a><br>
+    <a href="https://www.google.com">구글(보안)</a><br>
+    <input type=text name=text3><br>
+    <input type=text name=text4><br>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("input:hidden").first().attr("value","hello");
+            console.log($("input:hidden").first().attr("value"));
+            $(":text").first().css("background-color","red");
+            $(":text").last().attr("value","입력하세요.");
+            $("a[href^='http://']").css("color","cyan");
+            $("a[href$='.net']").css("background-color","green");
+        });
+    </script> -->
+    <!-- <h1>
+        <strong>객체 조작을 이용한 문서 변경</strong>
+        </h1>
+        <section id="se1">
+            <h2>html()</h2>
+            <p>내용1</p>
+        </section>
+        <section id="se2">
+            <h2>텍스트()</h2>
+            <p>내용2</p>
+        </section>
+        <section id="se3">
+            <h2>그림 속성 변경</h2>
+            <p><img src="img/A.jpg" width=150 height=150></p>
+        </section>
+        <button class=b1>html/텍스트 변경</button>
+        <button class=b2>그림 크기 변경</button>
+        <button class=b3>그림 변경</button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                var i = true;
+                $(".b1").click(function(){
+                    $("#se1 h2").css({"color":"blue","font-style":'italic'});
+                    $("#se1 p").html("<a href='#'>html 변경</a>");
+                    $("#se2 h2").css({"color":"red","font-family":'fantasy'});
+                    $("#se2 p").text("텍스트 변경");
+                });
+                $(".b2").click(function(){
+                    if(i){
+                        $("#se3 img").attr("width",496).attr("height",266);
+                    }else{
+                        $("#se3 img").attr("width",150).attr("height",150);
+                    }
+                    i = !i;
+                });
+                $(".b3").click(function(){
+                    $("#se3 img").attr("src","img/B.jpg");
+                });
+            });
+        </script>
+    </h1> -->
+    <!-- <h2>개인정보 입력</h2>
+    <p id="name"><label for="user_name">이름 : </label><input type=text id="user_name"></p>
+    <p id="tel"><label for="user_tel">연락처 : </label><input type=text id="user_tel"></p>
+    <p id="Lang">
+        <span id="user_Lang">주 언어 : </span>
+        <input type=checkbox id="ch1" value="JAVA">
+        <label for="ch1">JAVA</label>
+        <input type=checkbox id="ch2" value="Javascript">
+        <label for="ch2">Javascript</label>
+        <input type=checkbox id="ch3" value="Spring">
+        <label for="ch3">Spring</label>
+    </p>
+    <button id="print">입력 값 출력</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#print").click(function(){
+                var name = $("#user_name").val();
+                var tel = $("#user_tel").val();
+                var result = "";
+                for(var i=0; i<$("input:checkbox").length; i++){
+                    if($("#ch"+(i+1)).prop("checked")){
+                        result += $("#ch"+(i+1)).val()+" ";
+                    }
+                }
+                $("#name").children().remove();
+                $("#name").text("입력하신 이름 : "+name);
+                $("#tel").children().remove();
+                $("#tel").text("입력하신 연락처 : "+tel);
+                $("#lang").children().remove();
+                $("#lang").text("선택한 값 : "+result);
+            });
+        });
+    </script> -->
+    <div class=table>
+    <table class=tab border=1 width=100 height=100>
+    </table>
+</div>
+    <button id=addtr>줄 추가</button><br>
+    <button id=addtab>테이블 추가</button><br>
+    <button id=deltr>줄 제거</button><br>
+    <button id=deltab>테이블 비우기</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            let a = 0;
+            $("#addtr").click(function(){
+                $(".tab").append("<tr id=tr"+a+"><td></td></tr>");
+                a++;
+            });
+            $("#deltr").click(function(){
+                $("#tr"+a).remove();
+                a--;
+            });
+            $("#addtab").click(function(){
+                let tabClone = $(".tab").clone();
+                $(".tab").after(tabClone);
+
+            });
+            $("#deltab").click(function(){
+                $(".tab").empty();
+                a=0;
+            });
+        });
+    </script>
+</body>

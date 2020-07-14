@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>성적 입력기</h2>
+    <table class=tab border=2>
+        <tr>
+            <td id=A>과목명</td>
+            <td id=B>학기</td>
+            <td id=C>학점</td>
+        </tr>
+        
+    </table>
+    <p id=txt>
+        <tr><td><input type="text" placeholder="과목명" id=text1></input></td></tr>
+        <tr><td><input type="text" placeholder="학기" id=text2></input></td></tr>
+        <tr><td><input type="text" placeholder="학점" id=text3></input></td></tr>
+    </p>
+        <button class="btn1">테이블 저장</button>
+        <button class="btn2">삭제</button>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $(function(){
+                $("#btn1").click(function(){
+                    var text1 = document.getElementById("text1");
+                    var text2 = document.getElementById("text2");
+                    var text3 = document.getElementById("text3");
+                    
+                    
+                    
+                });
+            });
+        </script>
+</body>

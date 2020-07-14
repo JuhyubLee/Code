@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    height : 100000px;
+    width : 50000px;
+}
+#wrap{
+    position : fixed;
+    left : 150px;
+    top : 150px;
+}
+</style>
+</head>
+<!-- <body>
+    <div id=wrap>
+        <p>Top : <span class=top>0</span>px</p>
+        <p>Left : <span class=left>0</span>px</p>
+    </div>
+    <select id=favorite>
+        <option value="">선택값</option>
+        <option value=strawberry>딸기</option>
+        <option value=apple>사과</option>
+        <option value=tomato>토마토</option>
+        <option value=carrot>당근</option>
+    </select>
+    <p id=txt></p>
+    <input type=text name=word id=word><br>
+    <p id=printword></p>
+    <p id=txt2></p>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#favorite").change(function(){
+                $("#txt").text($(this).val());
+            });
+        });
+        $(window).on("scroll",function(){
+            var top = $(this).scrollTop();
+            var left = $(this).scrollLeft();
+            $(".top").text(top);
+            $(".left").text(left);
+        });
+        $(function(){
+            $(document).keyup(function(k){
+                $("#txt2").text(k.keyCode);
+                $("#printword").text($("#word").val());
+            });
+        $(document).mousemove(function(m){
+            var cx = m.clientX;
+            var cy = m.clientY;
+            var px = m.pageX;
+            var py = m.pageY;
+            $(".top").text("client : "+cx+", page : "+px);
+            $(".left").text("client : "+cy+", page : "+py);
+        });
+        });
+    </script>
+</body> -->
+<body>
+    <!-- <div id=wrap>
+        <p id=p1>
+            <button class=btn0>버튼1</button>
+        </p>
+        <p id=p2>
+            <button class=btn1>버튼2</button>
+        </p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $(".btn0.on").on("mouseover focus", function(){
+                alert("no live");
+            });
+            $(".btn0").addClass("on");
+            $("#p2").on("mouseover focus",".btn1.on", function(){
+                alert("live");
+            });
+            $(".btn0").addClass("on");
+            $(".btn1").addClass("on");
+        });
+    </script>
+</body> -->
+<!-- <div id=wrap>
+    <p id=p1>
+        <button id=btn1>버튼1</button>
+    </p>
+    <p2 id=p2></p2>
+        <p>
+            <button id=del2>버튼2 해제</button>
+        </p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#btn1").one("mouseover", function(){
+            alert("one 실행");
+        });
+        $(document).on("mouseover","#btn2",function(){
+            alert("live 이벤트 등록 실행");
+        });
+        $("#p2").append("<button id=btn2>버튼2</button>");
+        $("#del2").on("click",function(){
+            $(document).off("mouseover","#btn2");
+        })
+    })
+</script> -->
+</html>
